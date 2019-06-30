@@ -1,0 +1,109 @@
+
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%
+%%%%%   PREAMBLE   %%%%%
+%%%%%%%%%%%%%%%%%%
+
+\usepackage[letterpaper, margin=1in]{geometry}		%Sets to 1 inch margins. Comment out this package if you prefer standard (wide) margins.
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+%\everymath{\displaystyle}. %All math / fractions are large, not inline small font
+
+
+%%%%%%%%%%%%%%%%%%
+%%%%%  COMMANDS  %%%%%
+%%%%%%%%%%%%%%%%%%
+
+%\renewcommand{\arraystretch}{2.5}. %Will define row spacing for all tables in document
+\newcommand{\Z}{\mathbb{Z}}	% Integers
+\newcommand{\N}{\mathbb{N}}	% Integers
+\newcommand{\Q}{\mathbb{Q}}	% Rational numbers
+\newcommand{\R}{\mathbb{R}}	% Real numbers
+\newcommand{\C}{\mathbb{C}}	% Complex numbers
+
+\newcommand{\h}[1]{\hspace*{#10pt}} % Forced hspace by increments of 10. (use for hanging indents)
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ts}{\textstyle}
+
+
+%%%%%%%%%%%%%%%%%%
+%%%%%%    OTHER   %%%%%%
+%%%%%%%%%%%%%%%%%%
+
+\setlength \parindent{0pt}  % This removes the beginning of paragraph indent.
+\title{Tables}
+\author{Sarah Waski}
+\date{}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%% BEGIN DOCUMENT %%%%%
+%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{table}[ht]
+\renewcommand{\arraystretch}{2.5}
+\caption{Discrete Distributions}
+\[
+\begin{array}[h]{| l | l  | c | c | }
+\hline
+\text{Name} & \text{Density function} & \text{Mean} & \text{Variance}\\[\medskipamount] 
+\hline \hline
+\text{Uniform} & f(x)=\dfrac{1}{n} & \dfrac{n+1}{2} & \dfrac{n^2 - 1}{12} \\[\medskipamount]  \hline
+\text{Geometric} & f(x)=q^x p & \dfrac{q}{p} & \dfrac{q}{p^2} \\[\medskipamount]  \hline
+\text{Negative Binomial} & f(x)=\dbinom{x+r-1}{r-1} q^x p^r &  \dfrac{rq}{p} & \dfrac{rq}{p^2}  \\[\medskipamount] \hline
+\text{Binomial} & f(x)=\dbinom{n}{x}p^x q^{n-x} &  np & npq \\[\medskipamount] \hline
+\text{Hypergeometric} &  f(x)=\dfrac{\binom{r}{x} \binom{N-r}{n-x}}{\binom{N}{n}} & n \dfrac{r}{N} & n \dfrac{r}{N}\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right) \\[\medskipamount] \hline
+\text{Poisson} & f(x)=\dfrac{e^{-\lambda} \lambda^x}{x!} &  \lambda & \lambda  \\[\medskipamount]  \hline
+\end{array}
+\]
+\label{table:DD}
+\end{table}%
+
+\begin{table}[!h]
+\renewcommand{\arraystretch}{2.5}
+\caption{Continuous Distributions}
+\[
+\begin{array}[h]{| l | l | l | c | c |}
+\hline
+\text{Name} & \text{PDF} & \text{CDF}& \text{Mean} & \text{Variance}\\ \hline \hline
+\text{Uniform} & f(x)=\dfrac{1}{b-a} & F(x)=\dfrac{x-a}{b-a} & \dfrac{a+b}{2} & \dfrac{(b-a)^2}{12} \\[\medskipamount]  \hline
+\text{Exponential} & f(x)=\lambda e ^{-\lambda x} & F(x)= 1-e ^{-\lambda x} & \dfrac{1}{\lambda} & \dfrac{1}{\lambda^2}  \\[\medskipamount]  \hline
+\text{Normal} & f(x)=\dfrac{1}{\sigma\sqrt{2\pi}} e^{\frac{-(x-\mu)^2}{2\sigma^2}}& F(x)=\Phi(x)  & \mu & \sigma^2  \\[\medskipamount]  \hline
+\text{Gamma} & f(x)=\dfrac{\lambda^\alpha x^{\alpha-1}{e^{-\lambda x}}}{\Gamma(\alpha)} & F(x)= 1-\displaystyle\sum_{k=1}^{\alpha-1} Pois\left(\frac{x}{\lambda}\right)  & \dfrac{\alpha}{\lambda} & \dfrac{\alpha}{\lambda^2}  \\[\medskipamount]  \hline
+\end{array}
+\]
+\label{table:CD}
+\end{table}%
+
+
+\end{document}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%% NOT IN DOCUMENT %%%%% 
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[ht]
+\renewcommand{\arraystretch}{1.5}
+\caption{Title or Description}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+a & b\\
+\hline
+c & d\\
+e & f  \\
+\hline
+\end{tabular}
+\end{center}
+\label{tab1}
+\end{table}%
+\end{document}
